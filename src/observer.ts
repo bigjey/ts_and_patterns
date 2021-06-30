@@ -17,10 +17,8 @@ export function createSubject<EventType>(): ISubject<EventType> {
   };
 
   const notify = (ev: EventType) => {
-    let i = 0;
     for (const observer of observers) {
       observer(ev);
-      i++;
     }
   };
 
